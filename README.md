@@ -34,5 +34,5 @@ Antes de usar, vocẽ precisa ter na sua máquina:
 
 Feito por Caio Rodrigues 👋🏽 Entre em contato!
 
-[![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/caiordm/)](https://www.linkedin.com/in/caiordm/) 
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:caiordm08@gmail.com)](mailto:caiordm08@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/caiordm/)](https://www.linkedin.com/in/caiordm/) 
+[![Gmail Badge](https://img.shields.io/badge/Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:caiordm08@gmail.com)](mailto:caiordm08@gmail.com)
