@@ -9,10 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.caio.encurtador.dto.UrlUser;
 import com.caio.encurtador.model.Url;
 import com.caio.encurtador.service.UrlService;
 
@@ -30,19 +32,27 @@ public class UrlController {
 		return urlService.createUrl(url);
 	
 	}
+
+	@GetMapping("/{hash}")
+	public ResponseEntity<String> getEncurtada(@PathVariable String hash) {
+		return urlService.getEncurtada(hash);
+	}
+	
 	
 	@GetMapping("/getAll")
 	public List<Url> getAll() {
 		return urlService.getAll();
 	}
 	
-	@GetMapping("/{hash}")
-	public ResponseEntity<String> getEncurtada(@PathVariable String hash) {
-		return urlService.getEncurtada(hash);
+
+	@PostMapping("/associaUser")
+	public ResponseEntity<String> associaUser(@RequestBody UrlUser urlUser) {
+		return urlService.associaUser(urlUser);
 	}
-	
+
 	@PostMapping("/teste")
 	public String teste(@RequestBody String texto) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		return urlService.getHash(texto);
 	}
+	
 }
