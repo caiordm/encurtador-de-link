@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.caio.encurtador.dto.UrlUser;
 import com.caio.encurtador.model.Url;
@@ -27,29 +28,32 @@ public class UrlController {
 		this.urlService = urlService;
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/create")
 	public ResponseEntity<String> create(@RequestBody Url url) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		return urlService.createUrl(url);
 	
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/{hash}")
 	public ResponseEntity<String> getEncurtada(@PathVariable String hash) {
 		return urlService.getEncurtada(hash);
 	}
 	
-	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/getAll")
 	public List<Url> getAll() {
 		return urlService.getAll();
 	}
 	
-
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/associaUser")
 	public ResponseEntity<String> associaUser(@RequestBody UrlUser urlUser) {
 		return urlService.associaUser(urlUser);
 	}
-
+	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/teste")
 	public String teste(@RequestBody String texto) throws NoSuchAlgorithmException, UnsupportedEncodingException {
 		return urlService.getHash(texto);
