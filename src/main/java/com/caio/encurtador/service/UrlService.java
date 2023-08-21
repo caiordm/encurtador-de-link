@@ -35,7 +35,9 @@ public class UrlService {
 		url.setUrlEncurtada("http://localhost:8080/" + url.getHash());
 		urlRepository.save(url);
 		
-		return ResponseEntity.status(HttpStatus.CREATED).body("URL encurtada com sucesso!");
+		String jsonResponse = "{\"urlEncurtada\": \"" + url.getUrlEncurtada() + "\"}";
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(jsonResponse);
 	}
 	
 	public List<Url> getAll() {
